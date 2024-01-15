@@ -5,7 +5,7 @@ from db import DataBase
 
 def login(user: str, db: DataBase):
     response = db.user_exists(user_name=user)
-    
+
     if response is not None:
         with open(".cookie", "w") as f:
             f.write(str(response["user_id"]))
@@ -13,14 +13,16 @@ def login(user: str, db: DataBase):
     else:
         print(f"Invalid user: {user}, contact your admin to create an account")
 
+
 def logout():
     try:
-    # Attempt to remove the file
+        # Attempt to remove the file
         os.remove(".cookie")
         print(f"Logout succesfull")
     except OSError as e:
         # Handle the case where the file couldn't be removed (e.g., file not found)
         print(f"Error deleting file '.cookie'", e)
+
 
 def is_logged_in(db: DataBase):
     try:

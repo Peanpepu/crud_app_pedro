@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
-class DataBase(ABC):
 
+class DataBase(ABC):
     def __init__(self):
         pass
 
@@ -10,7 +10,9 @@ class DataBase(ABC):
         pass
 
     @abstractmethod
-    def add_song(self, song: str, album: str, artist: str, genre: str, release_date: str):
+    def add_song(
+        self, song: str, album: str, artist: str, genre: str, release_date: str
+    ):
         pass
 
     @abstractmethod
