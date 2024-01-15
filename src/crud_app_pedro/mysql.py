@@ -2,7 +2,6 @@ from datetime import datetime
 
 import pymysql
 
-
 # MySQL connection parameters
 username = "root"
 password = "my-secret-pw"

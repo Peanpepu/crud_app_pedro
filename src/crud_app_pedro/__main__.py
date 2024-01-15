@@ -1,5 +1,6 @@
 import argparse
 import os
+
 import load_dotenv
 
 from crud_app_pedro.auth import is_logged_in, login, logout

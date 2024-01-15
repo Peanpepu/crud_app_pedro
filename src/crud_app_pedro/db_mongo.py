@@ -1,6 +1,5 @@
-from pymongo import MongoClient
-
 from db import DataBase
+from pymongo import MongoClient
 
 
 class MongoDataBase(DataBase):
