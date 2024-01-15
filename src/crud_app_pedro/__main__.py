@@ -1,8 +1,10 @@
 import argparse
+import os
+import load_dotenv
 
-from auth import is_logged_in, login, logout
-from db import DataBase
-from db_mongo import MongoDataBase
+from crud_app_pedro.auth import is_logged_in, login, logout
+from crud_app_pedro.db import DataBase
+from crud_app_pedro.db_mongo import MongoDataBase
 
 
 def main():
@@ -38,7 +40,15 @@ def main():
     args = parser.parse_args()
     
     # Ensure we are connected to the database
-    db: DataBase = MongoDataBase("mongodb://localhost:27017/")
+    load_dotenv.load_dotenv()
+    connection_str = os.getenv("CRUD_APP_CONNECTION_STR")
+
+    if connection_str is None:
+        print("Provide the mongoDB connection string via the environment variable CRUD_APP_CONNECTION_STR")
+        exit(-1)
+
+
+    db: DataBase = MongoDataBase(connection_str)
 
     match args.command:
         case "login":

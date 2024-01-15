@@ -12,7 +12,7 @@ description = "A simple crud app"
 readme = "README.md"
 
 requires-python = ">=3.7"
-classifierss = [
+classifiers = [
     "Develpment Status :: 2 - Pre-Alpha"
 ]
 

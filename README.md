@@ -1,5 +1,18 @@
 # Sample CRUD app
 
+# Installation
+'''
+pip install crud_app_pedro
+# or
+pip install https://github.com/Peanpepu/crud_app_pedro.git
+'''
+
+# Example of use
+Before create a '.env' file with the required enviroment vatiables, an example is provided at [.env.template](.env.template)
+'''
+$ python -m crud_app_pedro
+'''
+
 ## Domain
 This example is going to be made on Music.
 
